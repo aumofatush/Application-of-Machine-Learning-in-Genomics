@@ -27,7 +27,7 @@ The three components of supervised learning are the following:
 - Post-training output: predicted label for the unlabelled data points
 
 #### b. Unsupervised Learning
-Unsupervised learning, on the other hand, is trying to find structure in a data set without any labels [1]. It is important to note that for unsupervised learning, there is no training input, so structure often involves clustering and dimensionality reduction, so that interpretation of complex genomic datasets becomes less challenging.
+Unsupervised learning, on the other hand, is trying to find structure in a data set without any labels [1]. It is important to note that for unsupervised learning, there is no training input, so structure often involves clustering and dimensionality reduction. This insures that interpretation of complex genomic datasets becomes less challenging.
 
 - Input: a collection of data points
 - Output: predicted label for the unlabelled data points
@@ -43,10 +43,10 @@ The model is initially fit on a <b>training</b> dataset, which is a set of examp
 Examples of supervised learning in genetics and genomics range from DNA pattern recognition to text-mining. In this section, we will discuss two prominent examples of supervised learning, and demonstrate some applications and their influence to the field.
 
 #### a. Hidden Markov Models  
-One of the most pervasive examples of supervised learning is the Hidden Markov Model, hereinafter referred to as the HMM. HMMs are a type of Bayesian network that use transition and emission probabilities to interpret the state probability of a dataset. HMMs have been used in bioinformatic modeling from chromatin state discovery [2] to gene finding [1]. Here, we present a simple gene-finding HMM used to capture the properties of a protein-coding gene.  
+One of the most pervasive examples of supervised learning is the Hidden Markov Model(HMM). HMMs are a type of Bayesian network that use transition and emission probabilities to interpret the state probability of a dataset. HMMs have been used in bioinformatic modeling from chromatin state discovery [2] to gene finding [1]. Below is a simplified gene finding model, which captures the basic properties of a protein-coding gene.  
 ![](/BENG_183_Figures/Gene_Finding_SL.jpg)  
 
-This model requires as input a training set of labeled DNA sequences. Labels for such a model may include the start and end coordinates of a gene, splice sites, and UTR. The model uses this training data to learn general properties of genes, including the DNA pattern near donor and acceptor splice sites, the expected length distributions for each element, and patterns within elements, such as typical codons in an exon vs. an intron. The trained model can then use these learned properties to identify novel genes that resemble the genes in the training set.  
+The model takes as input the DNA sequence of a chromosome or a portion thereof. Labels for such a model may include the start and end coordinates of a gene, splice sites, and UTR. The model uses this training data to learn general properties of genes, including the DNA pattern near donor and acceptor splice sites, the expected length distributions for each element, and patterns within elements, such as typical codons in an exon vs. an intron. The trained model can then use these learned properties to identify novel genes that resemble the genes in the training set.  
 
 Note certain limitations to this type of model, namely that it is incapable of identifying overlapping genes or multiple isoforms of the same gene. Similar limitations exist for other applications of HMMs, such as in topologically associating domain (TAD) discovery and directionality index creation in Hi-C data, wherein a simple HMM as above cannot find a hierarchy of TADs. For biological questions like this, more complex models are useful.  
 
@@ -56,7 +56,7 @@ Another commonplace example of supervised learning in genomics is linear regress
 One approach to choosing a statistical model is to choose the simplest model that has the right parameters and right assumptions based on our biological data, and work toward building rigor and complexity. Thus, it is important to understand what the assumptions of each model are, and how it relates to the problem we are trying to solve. In the additive model, for example, by putting a line to the dataset, we are exploring the phenomenon that the number of minor alleles, or major alleles, is correlated with phenotypic variation, and as such the two homozogytes are equally different to the heterozygote. Such distinctions are important when performing association studies, e.g. for purposes related to drug target discovery.  
 
 ## V. Unsupervised Learning Applications<a name="5"></a>  
-Finally, bioinformaticians often work with unlabelled data and use various clustering and dimensionality reduction algorithms to make sense of it. Here, we will discuss two such algorithms and their uses in the field.  
+Finally, bioinformaticians also often work with unlabelled data and use various clustering and dimensionality reduction algorithms to make sense of it. Here, we will discuss two such algorithms and their uses in the field.  
 
 #### a. Hierarchical Clustering  
 ![](/BENG_183_Figures/Dendrogram_UL.JPG)  
@@ -75,7 +75,7 @@ Unweighted Pair Group Method with Arithmetic Mean (UPGMA): The average distance 
 Complete Linkage: The dissimilarity between two groups is equal to the greatest dissimilarity between a member of one cluster and a member of another cluster. This method tends to produce very tight clusters.
 Single Linkage: The dissimilarity between two clusters is the minimum dissimilarity between members of the two clusters. This method produces clusters in long chains and can readily identify outliers.
 ```
-Hiearchical clustering has applications including quality checking (do technical/biological replicates cluster together?) or in evolutionary genomics, such as phylogenetic tree inference.  
+An important real world application of hierarchical clustering is in evolutionary genomics, where this method could produce a phylogenetic tree based on how similar species (data points) are to each other.
 
 #### b. K-means Clustering  
 ![](BENG_183_Figures/Kmeans_UL.JPG)  
@@ -86,9 +86,9 @@ K-means clustering offers an alternative method of aggregating datapoints for fu
 3. For each cluster, update its mean vector based on all the points that have been assigned to it
 4. Terminate after predetermined number of iterations OR after a certain percentage of data points converge inside a cluster. (Alternatively, when nothing changes, meaning no points are assigned to different clusters compared to the previous iteration, we stop.)
 ```  
-K-means clustering can be used to cluster gene expression profiles to predict gene function or cluster patient samples to predict clinical characteristics [4]. Altogether, both clustering methods offer valuable information in inferring and modeling the behavior of biological occurrences. One key difference between the two methods is that hierarchical clustering is determinate, that is it will always result in the same solution, whereas k-means depends on random initialization, which may change the solution. Another difference is that hierarchical clustering allows the scientist to understand the hierarchy of the dataset, whereas k-means rigidly assigns clusters without offering an understanding of their relationship within and to each other.  
+A real world application of k-means clustering is to cluster gene expression profiles to predict gene function or cluster patient samples to predict clinical characteristics [4]. Altogether, both clustering methods are valid ways to model biological occurences and provide key information about how data points, that represent genetic information, are related to each other. One key difference between the two methods is that hierarchical clustering is determinate, meaning the clustering solution will always be the same, whereas k-means depends on random initialization, meaning the clustering solution can vary each time. Another difference is that hierarchical clustering allows the scientist to understand the hierarchy of the dataset, perhaps by creating a dendrogram, whereas k-means rigidly assigns clusters without offering an understanding of their relationship within and to each other.  
 
-Altogether, machine learning is picking up speed in a wide array of bioinformatic applications, and it is critical to assess the considerations and recurrent challenges in such applications as they approach clinical and widespread usage. Nonetheless, such techniques offer a powerful basis from which to provide insight toward discovery in genomics.  
+Overall, machine learning is continuously growing in general and within the broad field of bioinformatics. With that being said, it is vital to evaluate the concerns and ongoing challenges in bioinformatics-related applications as they approach clinical and widespread usage. Nonetheless, such methods offer a powerful basis from which to provide insight toward discovery in genomics.  
 
 # Sources outside of class<a name="6"></a>  
 [1] Libbrecht M.W., Noble W. S. Machine Learning Applications in Genetics and Genomics. Nature Reviews Genetics. 16, (2015) 321-332.  

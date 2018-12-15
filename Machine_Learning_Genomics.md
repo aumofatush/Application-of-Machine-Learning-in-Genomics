@@ -11,14 +11,14 @@ VI. [Sources](#6)
 
 ## I. Introduction<a name="1"></a>
 
-Machine learning is an interdisciplinary subfield of computer science and mathematics involving algorithm and method development for predictive modeling. In the post-genomic era, interpreting large genomic datasets with high complexity, dimensionality, and noise has proven to be a daunting task, and machine learning has allowed bioinformaticians to utilize statistical approaches to understand the data. Many early applications of machine learning in genomics involved annotation of genomic sequence elements based on DNA pattern recognition. Machine learning is most useful for the interpretation of large genomic data sets and annotation of genomic sequence elements based on DNA pattern recognition. Machine Learning approaches have since extended to other types of data, such as RNA-Seq differential gene expression, ChIP-Seq and chromatin annotation. Machine Learning can also help elucidate underlying biological mechanisms, such as through regulatory network or pathway inference.
+Machine learning blends together computer science and mathematics involving algorithm and method development to create predictive models. In the post-genomic era, large genomic datasets tended to be extremely complex, and have high dimensionality and noise. This made interpreting genomic data a formidable task, so thankfully machine learning has allowed bioinformaticians to utilize statistical techniques to better comprehend the data. This explains why annotation of genomic sequence elements based on DNA pattern recognition was popular in the early days of when machine learning was being applied to genomics. This is why many of the early applications of machine learning in genomics were directed towards doing that. Also, machine learning approaches have since extended to other types of data, such as RNA-Seq differential gene expression, ChIP-Seq and chromatin annotation. Machine learning can also help elucidate underlying biological mechanisms, such as through regulatory network or pathway inference.
 
 ## II. Supervised Learning vs. Unsupervised Learning <a name="2"></a>
 
 Machine learning is often separated into two types of tasks - supervised and unsupervised learning. In this section, we will explore the differences between these two topics and describe the type of data required to use either method. 
 
 #### a. Supervised Learning
-Supervised learning involves training a model with already labelled data in order to make predictions about unlabelled examples [1]. As the model learns the general properties of the data and identifies which features are most relevant, it uses those learned properties to infer new information in the unlabelled data. 
+Supervised learning involves training a model with already labelled data in order to make predictions about unlabelled examples [1]. As the model learns more about the general properties of the data and identifies the most relevant features, it uses those learned properties to infer new information about the unlabelled data. 
 
 The three components of supervised learning are the following:
 
@@ -35,9 +35,9 @@ Unsupervised learning, on the other hand, is trying to find structure in a data 
 ## III. Model Selection and Optimization  <a name="3"></a>  
 ![](/BENG_183_Figures/Model_Sel_Opt.png)  
 
-Model selection and optimization involves splitting the data into training, validation, and testing in order to ensure that the model is both specific and predictive, but generalizable as well.  
+Model selection and optimization involves splitting the data into training, validation, and testing sets to ensure that the model is both specific and predictive, but generalizable as well.  
 
-The model is initially fit on a <b>training</b> dataset, which is a set of examples used to optimize the model's parameters. Then, the fitted model is tested on the <b>validation</b> dataset, which offers an unbiased evaluation of the model and finetunes the hyperparameters and to make sure there is no overfitting. This is used to report how well we expect the model to perform on unseen data. Finally, the <b>test</b> dataset is used to provide an unbiased evaluation of a final model fit on the training dataset. Also, it is used to tune any model parameters that are not directly optimized.
+The model is initially fit on a <b>training</b> dataset, which is a set of examples used to optimize the model's parameters. Then, the fitted model is tested on the <b>validation</b> dataset, which offers an unbiased evaluation of the model and finetunes the hyperparameters to make sure there is no overfitting. This is used to report how well we expect the model to perform on unseen data. Finally, the <b>test</b> dataset is used to provide an unbiased evaluation of a final model fit on the training dataset. Also, it is used to tune any model parameters that are not directly optimized.
 
 ## IV. Supervised Learning Applications<a name="4"></a> 
 Examples of supervised learning in genetics and genomics range from DNA pattern recognition to text-mining. In this section, we will discuss two prominent examples of supervised learning, and demonstrate some applications and their influence to the field.
@@ -79,7 +79,7 @@ Hiearchical clustering has applications including quality checking (do technical
 
 #### b. K-means Clustering  
 ![](BENG_183_Figures/Kmeans_UL.JPG)  
-K-means clustering offers a simple alternative method of aggregating datapoints for further analysis. The algorithm for k-means clustering is as follows:  
+K-means clustering offers an alternative method of aggregating datapoints for further analysis. The algorithm for k-means clustering is as follows:  
 ```
 1. Begin with predetermined choice of clusters K, which are represented by centroids. Iterate the following two steps.
 2. For each data point, find the closest mean vector and assign the object to the corresponding cluster

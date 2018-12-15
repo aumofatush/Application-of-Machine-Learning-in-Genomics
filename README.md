@@ -1,2 +1,2 @@
 # Application-of-Machine-Learning-in-Genomics
-BENG 183 Final Markdown Paper
+Throughout our Applied Genomic Technologies course, we learned about how the hot field of bioinformatics is continiously expanding by incorportating revolutionary principles and technologies that use genomic information for biomedical applications. For our final project, we chose to focus on how machine learning can be used in genomics. First, we explain the differences between supervised and unsupervised machine learning. Then, we introduce how a model is selected and further optimized. After this, we break down the different supervised learning applications and unsupervised learning applications.
